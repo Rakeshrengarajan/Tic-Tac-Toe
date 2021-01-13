@@ -1,16 +1,15 @@
 # Tic Tac Toe Game
-from IPython.display import clear_output
 import random 
 
 # creating board with nine places
 
 def display_board(board):
-    clear_output()
     print(' '+board[7]+' | '+board[8]+' | '+board[9]+' ')
     print('-----------')
     print(' '+board[4]+' | '+board[5]+' | '+board[6]+' ')
     print('-----------')
     print(' '+board[1]+' | '+board[2]+' | '+board[3]+' ')
+
 
 # This function is to select the marker for each player
 
@@ -28,6 +27,7 @@ def player_input():
 def place_marker(board,marker,position):
     board[position] = marker
 
+
 # To check if a player wins or not. There are 8 possibilities for a player to win.
 
 def win_check(board,marker):
@@ -44,9 +44,8 @@ def win_check(board,marker):
     else:
         return False
 
+
 # To tell will player must start first,it will tell randomly
-
-
 
 def choose_first():
     num = random.randint(0,1)
@@ -88,12 +87,12 @@ def replay():
     return input("Do you want to play again (Y/N) : ").lower().startswith('y')
 
 
+
 # Here Comes the final Assembly of the game 
 
 while True:
     
     board = [' ']* 10
-    
     
     player1_marker, player2_marker = player_input()
     turn = choose_first()
